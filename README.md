@@ -1,18 +1,24 @@
 # Molecule Editing
 
-This folder is a self-contained demo for running one-shot molecule editing with a
-pretrained checkpoint on a small test set.
+This folder is a demo for running one-shot molecule editing with a pretrained
+checkpoint on a small test set. Download the checkpoint before running.
 
 ## What's included
 - `infer_oneshot.py`: entry point for inference.
 - `infer_config.yaml`: demo inference config (model, task defs, input/output paths).
-- `model.pth`: pretrained checkpoint used by the demo.
+- `model.pth`: pretrained checkpoint (download required, see below).
 - `data/test_chatdrug.csv`: sample input molecules (`mol` column).
 - `tasks.yaml`: task definitions and property trends.
 - `evaluate.py`: optional evaluation script for the generated outputs.
 
 ## Quickstart
 From the repo root:
+
+### Download checkpoint
+Download `model.pth` from:
+https://drive.google.com/file/d/1t4GDDtgKR69I9Y6BNEWqG9AOKQ3BQdgs/view?usp=drive_link
+
+Place the file at `Molecular_Editing/model.pth` (same folder as this README).
 
 ```bash
 python infer_oneshot.py --infer_config infer_config.yaml
