@@ -46,4 +46,4 @@ python evaluate.py \
 ## Notes
 - The demo uses `cuda:0` by default. To run on CPU, update `infer_config.yaml`
   (`device: cpu`) or pass `--device cpu`.
-# GraphEditing
+
