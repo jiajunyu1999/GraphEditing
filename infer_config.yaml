@@ -1,0 +1,91 @@
+base_config: config.yaml
+train_config: train_oneshot_config.yaml
+checkpoint: model.pth
+
+task_id: all
+
+input_csv: ./data/test_chatdrug.csv
+smiles_col: mol
+output_dir: output_
+
+# Sample K predictions per molecule.
+k: 1
+max_edits: 1
+max_attempts_per_sample: 1
+allow_duplicates: true
+allow_invalid_smiles: false
+allow_fewer_than_k: true
+rdkit_threads: 128
+
+sampling:
+  mode: best_first
+  best_first:
+    open_size: 10
+    expand: 2
+    topk: 2
+    alpha: 1.0
+    lambda: 0.1
+    beta: 0.0
+    max_steps: 3
+    max_expansions: 10
+
+
+
+
+retrieval:
+  enabled: false
+  
+
+task_defs:
+  taskid_prop:
+    "101": ["logp"]
+    "102": ["logp"]
+    "103": ["qed"]
+    "104": ["qed"]
+    "105": ["tpsa"]
+    "106": ["tpsa"]
+    "107": ["hba"]
+    "108": ["hbd"]
+
+
+    "201": ["logp", "hba"]
+    "202": ["logp", "hba"]
+    "203": ["logp", "hbd"]
+    "204": ["logp", "hbd"]
+    "205": ["logp", "tpsa"]
+    "206": ["logp", "tpsa"]
+    
+  prop_trend:
+    "101": "0"
+    "102": "1"
+    "103": "1"
+    "104": "0"
+    "105": "0"
+    "106": "1"
+    "107": "1"
+    "108": "1"
+
+    "201": "01"
+    "202": "11"
+    "203": "01"
+    "204": "11"
+    "205": "00"
+    "206": "01"
+   
+device: cuda:0
+seed: 42
+
+trend_alpha: 1.0
+
+delta_raw_ranges:
+  logp: [0.5, 5]
+  qed: [0.2, 0.9]
+  tpsa: [30, 100]
+  hba: [3, 10]
+  hbd: [3, 10]
+  drd2: [0.4, 1]
+  
+temperatures:
+  op: 1.0
+  fg: 1.0
+  remove: 1.0

@@ -1,0 +1,11 @@
+chemistry:
+  functional_groups_json: data/fg_list_small.json
+  # Property names are resolved by `mo_gnn_edit/properties.py`.
+  # Add new names here (and implement them in properties.py) to extend.
+  property_names:
+    - qed
+    - logp
+    - tpsa
+    - hba
+    - hbd
+    - drd2

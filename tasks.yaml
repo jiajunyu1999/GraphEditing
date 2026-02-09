@@ -1,0 +1,68 @@
+taskid_prop:
+  # "101": ["logp","tpsa",'hba','hbd']
+  # "102": ["logp",'tpsa','hba','hbd']
+  # "103": ["qed",'hbd','tpsa','hba']
+  # "104": ["qed",'hbd','tpsa'] 
+  # "105": ["tpsa",'hba','hbd','logp']
+  # "106": ["tpsa",'hba','hbd','logp']
+  # "107": ["hba",'tpsa','logp']
+  # "108": ["hbd",'tpsa','logp']
+
+  # "201": ["logp", "hba"]
+  # "202": ["logp", "hba"]
+  # "203": ["logp", "hbd"]
+  # "204": ["logp", "hbd"]
+  # "205": ["logp", "tpsa"]
+  # "206": ["logp", "tpsa"]
+  # "301": ["qed", "drd2"]
+  "101": ["logp"]
+  "102": ["logp"]
+  "103": ["qed"]
+  "104": ["qed"]
+  "105": ["tpsa"]
+  "106": ["tpsa"]
+  "107": ["hba"]
+  "108": ["hbd"]
+
+  "201": ["logp", "hba"]
+  "202": ["logp", "hba"]
+  "203": ["logp", "hbd"]
+  "204": ["logp", "hbd"]
+  "205": ["logp", "tpsa"]
+  "206": ["logp", "tpsa"]
+
+# 0 means delta decrease, 1 means delta increase (aligned with taskid_prop list order).
+prop_trend:
+  # "101": "0111"
+  # "102": "1000"
+  # "103": "1000"
+  # "104": "011"
+  # "105": "0001"
+  # "106": "1110"
+  # "107": "110"
+  # "108": "110"
+  "101": "0"
+  "102": "1"
+  "103": "1"
+  "104": "0"
+  "105": "0"
+  "106": "1"
+  "107": "1"
+  "108": "1"
+  "109": "1"
+  "110": "1"
+
+  "201": "01"
+  "202": "11"
+  "203": "01"
+  "204": "11"
+  "205": "00"
+  "206": "01"
+  # "301": "11"
+
+prop_threshold:
+  MolLogP: 0.5
+  qed: 0.1
+  TPSA: 10
+  NumHAcceptors: 1
+  NumHDonors: 1

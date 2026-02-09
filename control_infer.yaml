@@ -1,0 +1,16 @@
+inputs:
+  - smiles_tagged: "[CH2:1]=[C:2]([CH3:3])[CH:4]=[CH:5][c:6]1[cH:7][c:8]2[c:9](=[O:10])[c:11]3[c:12]([OH:13])[cH:14][cH:15][cH:16][c:17]3[o:18][c:19]2[c:20]([O:21][CH3:22])[c:23]1[OH:24]"
+    control:
+      task_id: "205"
+      delta_props:
+        logp: -2
+        tpsa: -20
+      anchor_atom_maps: [20]
+
+      anchor_mode: exclude  # include | exclude
+      op_allow: ["replace","add","remove"]
+      fg_candidates: ["*F"]
+      # Or per-op FG candidates:
+      # fg_candidates:
+      #   add: ["*N(C)C","*N1CCNCC1"]
+      #   replace: ["*F"]

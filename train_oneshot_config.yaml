@@ -1,0 +1,74 @@
+data:
+  mask_non_task_props: true
+  dataset_csv: /inspire/hdd/global_user/yujiajun-240108120114/project/mo_framework/data/103.csv
+  config_yaml: config.yaml
+  val_ratio: 0.001
+  seed: 42
+  batch_size: 512
+  num_workers: 0
+# /inspire/hdd/global_user/yujiajun-240108120114/project/mo_framework/data/edit_dataset10000_props.csv
+
+
+model:
+  hidden_dim: 768
+  num_layers: 2
+  gine_layers: 3
+  mlp_layers: 3
+  # Attention depth (stacked MHA blocks).
+  node_self_attn_layers: 1
+  prop_self_attn_layers: 1
+  # Cross-attn FFN (post-attn).
+  cross_attn_ffn_layers: 2
+  cross_attn_ffn_mult: 4
+  cross_attn_ffn_dropout: 0.1
+  # Task-conditional MoE routing.
+  num_tasks: 14
+  task_emb_dim: 32
+  dropout: 0.1
+  backbone: gine # one of: gine, mlp
+  use_moe: true
+  num_experts: 8
+  moe_topk: 3
+  moe_gate_temperature: 1.5
+  moe_gate_noise: 0.05
+
+
+train:
+  device: cuda:0
+  lr: 1e-5
+  weight_decay: 1.0e-5
+  max_epochs: 5
+  log_every_steps: 10
+  eval_every_steps: 20
+  eval_num_batches: 16
+  print_actions_every_steps: 100
+  early_stop_patience: 10000
+  save_path: checkpoints/base_moe8_3_768_step_5k_large_dynamic_103.pt
+  # MoE load-balancing regularizer (0 disables).
+  moe_balance_weight: 0.05
+  # Legacy (disabled): graph-level "needs edit" BCE loss.
+  edit_loss_weight: 0.0
+  edit_label_eps: 1.0e-4
+  fg_curriculum: false
+  fg_curriculum_start: 0.2
+  fg_curriculum_end: 0.8
+  remove_loss_weight: 1.0
+  dynamic_task_weights:
+    enabled: false
+    every_steps: 10
+    topk: 4
+    boost: 2.0
+
+
+eval:
+  # Run infer -> evaluate during training; best checkpoint picked by avg loose acc.
+  infer_config: infer_config.yaml
+  tasks_config: tasks.yaml
+  test_data: ./data/test_evaluate.csv
+  mol_col: mol
+  output_dir: out_tasks_eval_large_
+  every_epochs: 0
+  every_steps: 5
+  seed: 2024
+
+task_defs_yaml: /inspire/hdd/global_user/yujiajun-240108120114/project/mo_framework/tasks.yaml
