@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="assets/banner.svg" width="100%" alt="UniEdit — KDD 2026 · ORAL">
-
 # UniEdit
 
 ### A Graph-based MoE Alternative to Sequence Generation for Molecular Editing
