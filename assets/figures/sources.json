@@ -1,0 +1,62 @@
+{
+  "paper": "https://doi.org/10.1145/3770855.3818878",
+  "source_pdf": "3770855.3818878.pdf",
+  "render_scale": 3,
+  "figures": [
+    {
+      "file": "framework.png",
+      "figure": 1,
+      "pdf_page": 3,
+      "crop_points": [
+        51,
+        78,
+        562,
+        331
+      ]
+    },
+    {
+      "file": "property-shifts.png",
+      "figure": 5,
+      "pdf_page": 8,
+      "crop_points": [
+        51,
+        78,
+        562,
+        157
+      ]
+    },
+    {
+      "file": "multi-property.png",
+      "figure": 6,
+      "pdf_page": 8,
+      "crop_points": [
+        51,
+        190,
+        562,
+        279
+      ]
+    },
+    {
+      "file": "expert-routing.png",
+      "figure": 7,
+      "pdf_page": 8,
+      "crop_points": [
+        51,
+        310,
+        298,
+        471
+      ]
+    },
+    {
+      "file": "case-studies.png",
+      "figure": 8,
+      "pdf_page": 12,
+      "crop_points": [
+        51,
+        78,
+        562,
+        534
+      ]
+    }
+  ]
+}
