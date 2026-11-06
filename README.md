@@ -12,7 +12,7 @@
 
 Jiajun Yu, Zhihao Wu, Yizhen Zheng, Shirui Pan, Jiajun Bu, and Haishuai Wang
 
-[Highlights](#highlights) · [Method](#method) · [Results](#results) · [Quick start](#quick-start) · [Citation](#citation)
+[Highlights](#highlights) · [Method](#method) · [Results](#results) · [Cases](#case-studies) · [Quick start](#quick-start) · [Citation](#citation)
 
 </div>
 
@@ -52,7 +52,7 @@ These are reported paper results, not measurements from the lightweight demo. Lo
 *Figure 5.* Generated property distributions shift in the requested directions while retaining structural similarity to the source molecules.
 
 <details>
-<summary><b>See multi-objective behavior, expert routing, and edit examples</b></summary>
+<summary><b>See multi-objective behavior and expert routing</b></summary>
 
 ![Multi-property optimization trajectories](assets/figures/multi-property.png)
 
@@ -62,11 +62,17 @@ These are reported paper results, not measurements from the lightweight demo. Lo
 
 *Figure 7.* Different objectives activate different experts, illustrating task-dependent specialization.
 
-![Molecular editing case studies](assets/figures/case-studies.png)
-
-*Figure 8.* Representative transformations under unconstrained and structure-constrained optimization.
-
 </details>
+
+## Case studies
+
+![UniEdit molecular editing examples](assets/figures/case-studies.png)
+
+*Figure 8 from the paper.* Examples show how discrete graph edits change molecular properties while respecting different structural constraints.
+
+- **Property-directed editing:** source and edited molecules illustrate solubility and drug-likeness objectives.
+- **Controlled transformations:** highlighted regions show edits under scaffold, functional-group, and action constraints.
+- **Inspect the change:** compare the source structure, edited structure, and property values to understand the effect of each transformation.
 
 ## Quick start
 
